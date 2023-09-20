@@ -12,4 +12,4 @@ Make file contains commands needed.
 
 * `make run` Runs the program
 
-*  test commit
+*  test commit from panter team

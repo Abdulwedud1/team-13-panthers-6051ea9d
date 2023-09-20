@@ -11,5 +11,3 @@ Make file contains commands needed.
 * `make test-acceptance` Runs acceptance tests
 
 * `make run` Runs the program
-
-*  test commit from panter team

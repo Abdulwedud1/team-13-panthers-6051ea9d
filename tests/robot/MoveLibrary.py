@@ -26,3 +26,4 @@ def character_xposition_should_be(self, expected):
     assert end_y == expected, f"Expected: {expected}, Actual: {end_y}"
     
 
+

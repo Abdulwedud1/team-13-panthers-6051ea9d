@@ -3,13 +3,14 @@ from dataclasses import dataclass
 from enum import Enum
 
 #TODO: ADD THINGS YOU NEED FOR STATUS
+@dataclass
 class GameStatus:
     character_name: str = "Character"
     move_count: int = 0
     running: bool = False
     current_position: tuple = (-100, -100)
 
-def set_character_xposition(self, xycoordinates: tuple) -> None:
+def set_character_position(self, xycoordinates: tuple) -> None:
     print("Set character position state for testing")
     #TODO: IMPLEMENT THIS
 

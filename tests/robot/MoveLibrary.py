@@ -21,8 +21,8 @@ def character_xposition_should_be(self, expected):
     assert end_x == expected, f"Expected: {expected}, Actual: {end_x}"
 
 
-def character_xposition_should_be(self, expected):
-    end_y = self.controller.status.current_position[0]
+def character_yposition_should_be(self, expected):
+    end_y = self.controller.status.current_position[1]
     assert end_y == expected, f"Expected: {expected}, Actual: {end_y}"
     
 

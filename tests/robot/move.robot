@@ -18,8 +18,10 @@ Move in the middle of the board     6              4          NORTH             
 *** Keywords ***
 Move character
     [Arguments]    ${StartingX}  ${StartingY}  ${Direction}  ${EndingX}  ${EndingY}
-    Initialize character xposition with ${StartingX}
-    Initialize character xposition with ${StartingY}
-    Move iun direction           ${Direction}
-    Character xpositions should be  ${EndingX}
-    Character ypositions should be  ${EndingY}
+     Initialize character xposition with  ${startingX}
+    Initialize character yposition with  ${startingY}
+    Initialize character moveCount with  ${startingMoveCount}
+    Move in direction                    ${direction}
+    Character xposition should be        ${endingX}
+    Character yposition should be        ${endingY}
+    Character moveCount should be        ${endingMoveCount}

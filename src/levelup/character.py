@@ -1,61 +1,19 @@
-import logging
-from dataclasses import dataclass
-from enum import Enum
+from levelup.position import Position
+from levelup.direction import Direction
+from levelup.map import Map
 
-#TODO: ADD THINGS YOU NEED FOR STATUS
 class Character:
-    #character_name: str = "Character"
-    #move_count: int = 0
-    #running: bool = False
+    name = ""
+    current_position :Position = Position(-100,-100)
+    map :Map = Map()
 
-    current_position: tuple = (-100, -100)
+    def __init__(self, character_name):
+        self.name = character_name
 
-def set_character_xposition(self, xycoordinates: tuple) -> None:
-    print("Set character position state for testing")
-    #TODO: IMPLEMENT THIS
-def getCharacterName(character_name):
-
-    print("Get the chacater name from Controller Class")
-    #TODO: IMPLEMENT THIS
-
-def setCharacterName(character_name):
-    print("Set the chacater name returned from the Controller Game Status Class")
-    pass
-
-def getPosition(x,y):
-    print("Set the chacater name from Controller Class")
-    pass
+    def move(self, direction :Direction) -> None:
+        self.current_position = self.map.calculate_new_position(
+            self.current_position, direction)
     
-
-def currentPosition(x,y):
-    pass
-
-def currentPosition(x,y):
-    pass
-
-class Direction(Enum):
-    NORTH = "n"
-    SOUTH = "s"
-    EAST = "e"
-    WEST = "w"
-
-class CharacterNotFoundException(Exception):
-    pass
-
-class InvalidMoveException(Exception):
-    pass
-
-class GameController:
-    status: GameStatus
-
-    def __init__(self):
-        self.status = GameStatus()
-
-    def start_game(self):
-        pass
-
-    def create_character(self, character_name: str) -> None:
-        pass
-
-    def move(self, direction: Direction) -> None:
-        pass
+    def enter_map(self, map :Map):
+        self.map = map
+        self.current_position = self.map.starting_position

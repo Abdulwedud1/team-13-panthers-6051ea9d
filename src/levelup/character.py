@@ -10,7 +10,7 @@ class Character:
     def __init__(self, character_name):
         self.name = character_name
 
-    def move(self, direction :Direction) -> None:
+    def next_move(self, direction :Direction) -> None:
         self.current_position = self.map.calculate_new_position(
             self.current_position, direction)
     

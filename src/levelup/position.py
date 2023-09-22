@@ -8,7 +8,10 @@ class Position ():
         self.y = y
 
     def __eq__(self, obj):
-       pass
+        if self.x == obj.x and self.y == obj.y:
+            return True
+        else:
+            return False
 
 
 

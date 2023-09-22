@@ -1,17 +1,15 @@
-
 import pyfiglet
+from enum import Enum
+
+class Font(Enum):
+    BIG = "larry3d"
+    SMALL = "threepoint"
 
 class Logo:
 
-    T = "Welcome            to      Achipelago"
-
-    def render(self):
-
-        ASCII_art = pyfiglet.figlet_format(self.T, font = "larry3d")
-        print((ASCII_art))
-
-        self.T = "     by Team 13 - Panther"
-        ASCII_art_1 = pyfiglet.figlet_format(self.T, font = "threepoint")
-        print(ASCII_art_1)
+    def render(self, T: str, font: Font ) -> str:
+        
+        ASCII_art= pyfiglet.figlet_format(T, font.value)
+        return ASCII_art
 
 

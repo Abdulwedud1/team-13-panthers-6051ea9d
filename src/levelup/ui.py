@@ -2,7 +2,7 @@ import logging
 from typing import Callable
 from levelup.controller import GameController, InvalidMoveException
 from levelup.direction import Direction
-from levelup.logo import Logo
+from levelup.logo import Logo , Font
 
 VALID_DIRECTIONS = [x.value for x in Direction]
 
@@ -21,7 +21,7 @@ class GameApp:
                 break
         return response
 
-   def print_banner_prolog(self):
+    def print_banner_prolog(self):
         logo = Logo()
         welcome = logo.render("Welcome            to      Achipelago",Font.BIG)
         team    = logo.render("     by Team 13 - Panther", Font.SMALL)
@@ -45,6 +45,7 @@ class GameApp:
             print(self.controller.status)
 
     def start(self):
+        self.print_banner_prolog()
         self.create_character()
         self.controller.start_game()
         self.starting_pos = self.controller.status.current_position
